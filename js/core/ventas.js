@@ -1,6 +1,7 @@
 function NetearDivsTopGeneral() {
     jQuery("#contenidoGraficaVentas").html('');
     jQuery("#contenidoGraficaVendedores").html('');
+    jQuery("#contenidoGraficaProductos").html('');
 }
 function toCurrency(cnt) {
     cnt = cnt.toString().replace(/\$|\,/g, '');
@@ -143,9 +144,9 @@ function graficarHistogramaVendedores()
                 posicion = i;
             }
         }
-        if (inicioHistogramaVentas) {
+        if (inicioHistogramaVendedores) {
             $current = $("canvas.peity:nth-last-child(" + posicion + ")");
-            inicioHistogramaVentas = false;
+            inicioHistogramaVendedores = false;
         }
     }
 }
@@ -223,7 +224,7 @@ function graficarHistogramaProductos()
     jQuery("#tortaProductos").css("background", "#2f2f2f");
     jQuery("#puntosProductos").css("background", "#2f2f2f");
     jQuery.fn.peity.defaults.bar = {colours: ["#4d89f9"], delimiter: ",", height: "100%", max: null, min: 0, spacing: 1, width: "100%"};
-    var puntos = traerTop10Vendedores();
+    var puntos = traerTop10Productos();
     if (puntos) {
         var barras = "";
         for (var i = 0; i <= puntos.size; i++) {
@@ -254,7 +255,7 @@ function graficarTortaProductos()
     jQuery("#tortaProductos").css("background", "#78bde7");
     jQuery("#puntosProductos").css("background", "#2f2f2f");
     jQuery.fn.peity.defaults.pie = {colours: ["#ff9900", "#fff4dd", "#ffd592"], delimiter: null, diameter: "100%", height: null, width: null};
-    var puntos = traerTop10Vendedores();
+    var puntos = traerTop10Productos();
     if (puntos) {
         var barras = "";
         for (var i = 0; i <= puntos.size; i++) {
@@ -294,7 +295,7 @@ function graficarLineaProductos()
             barras = barras + "," + puntos[i]['y'];
         }
         jQuery("#contenidoGraficaProductos").html('');
-        jQuery("#contenidoGraficaProductos").html('<div id="barVendedores" style="display:none;"></div><div id="pieVendedores" style="display:none;"></div><div id="lineVendedores" style="display:none;"></div>');
+        jQuery("#contenidoGraficaProductos").html('<div id="barProductos" style="display:none;"></div><div id="pieProductos" style="display:none;"></div><div id="lineProductos" style="display:none;"></div>');
 
         jQuery("#lineProductos").text(barras.substr(1));
         jQuery("#lineProductos").peity("line");
@@ -340,16 +341,10 @@ function tabVentas3()
     jQuery("#contenido-tab-2").css('display', 'none');
     jQuery("#contenido-tab-3").css({'display': 'block', 'margin-top': '30px', 'padding': '0 20px'});
 }
-function traerVentas2Prod()
+function traerTop10Productos()
 {
-    jQuery("#pointsVentas").css("display", "none");
-    jQuery("#barsVentas").css("display", "none");
-    jQuery("#barsVendedores").css("display", "none");
-    jQuery("#pointsVendedores").css("display", "none");
-    jQuery("#histVendedores").css("display", "none");
-    jQuery("#histVentas").css("display", "block");
-    var id_query = "busqueda_ventas";
-    var sql = "select first 10 c_barra, sum(pr_venta*cn_venta) from mv_ventas v m where c_barra <> '0' group by c_barra order by sum(pr_venta*cn_venta) desc";
+    var id_query = "busqueda_top_productos";
+    var sql = "select first 10 c_barra, sum(pr_venta*cn_venta) from mv_ventas where c_barra <> '0' group by c_barra order by sum(pr_venta*cn_venta) desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;
@@ -365,12 +360,6 @@ function traerVentas2Prod()
 }
 function traerTop10Clientes()
 {
-    jQuery("#pointsVentas").css("display", "none");
-    jQuery("#barsVentas").css("display", "none");
-    jQuery("#barsVendedores").css("display", "none");
-    jQuery("#pointsVendedores").css("display", "none");
-    jQuery("#histVendedores").css("display", "none");
-    jQuery("#histVentas").css("display", "block");
     var id_query = "busqueda_top_clientes";
     var sql = "select first 10 c.nombres ||' '|| c.apellidos ||'('||round(cc_cliente,0)||')' cliente,sum(vr_subtotal) valor_venta from h_ventas a, m_clientes c where a.cc_cliente=c.cedula and f_factura='23/01/2014' group by 1 order by valor_venta desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
@@ -389,7 +378,7 @@ function traerTop10Clientes()
 pts = {};
 function traerTop10Vendedores()
 {
-    var id_query = "busqueda_top_clientes";
+    var id_query = "busqueda_top_vendedores";
     var sql = "select d_vendedor || '(' || hv.c_vendedor || ')' vendedor, sum(vr_subtotal) valor_venta from h_ventas hv, m_vendors v where hv.c_vendedor = v.c_vendedor and f_factura='23/01/2014' group by 1 order by valor_venta desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
@@ -446,20 +435,20 @@ function llenarTablaVentasXVendedor()
         document.getElementById("tab-ventasxclientes-1").innerHTML = "<thead style='background: white; color:red;'>" + "<tr>" + "<th style='padding:15px'>La búsqueda no arroja datos</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     }
 }
-function llenarTablaProductos()
+function llenarTablaVentasxProducto()
 {
-    var datos = traerVentas2Prod();
+    var datos = traerTop10Productos();
     var size = datos.size;
     var filas = [];
     for (var i = 0; i < size; i++) {
-        document.getElementById("top-productos").innerHTML = "";
+        document.getElementById("tab-ventasxproductos-1").innerHTML = "";
     }
-    document.getElementById("top-productos").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th>Producto</th>" + "<th>Número de Ventas</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxproductos-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th>Producto</th>" + "<th>Número de Ventas</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     for (var i = 0; i < size; i++) {
         filas[i] = document.createElement("tr");
         filas[i].setAttribute("id", "tr_" + i);
         filas[i].setAttribute("style", "text-align:center");
         filas[i].innerHTML = "<td>" + datos[i]['x'] + "</td>" + '<td>' + datos[i]['y'] + "</td>";
-        document.getElementById("top-productos").appendChild(filas[i]);
+        document.getElementById("tab-ventasxproductos-1").appendChild(filas[i]);
     }
 }

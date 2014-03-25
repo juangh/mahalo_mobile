@@ -850,7 +850,7 @@
                             <label for="checkbox-h-7" style=""><span data-lang-id="lang43">Todos</span></label>
                             <form id="frmChoiceFiltersInventario"> 
                                 <br> 
-                                <fieldset id="fieldCamposTransacciones"data-role="controlgroup" data-iconpos="right">
+                                <fieldset id="fieldCamposTransacciones" data-role="controlgroup" data-iconpos="right">
                                     <legend>Detalle</legend>
                                     <input type="checkbox" data-theme="c" data-mini="true" checked="" name="checkbox-h-7a" id="checkbox-h-7a">
                                     <label for="checkbox-h-7a"><span data-lang-id="lang49">Línea</span></label>
@@ -974,7 +974,7 @@
         <!-- FIN PAGINA DETALLE INVENTARIO -->
 
         <!-- INICIO PAGINA TOP PRODUCTOS -->
-        <section data-role="page" data-theme="b" id="tab-productos-1" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaProductos();">
+        <section data-role="page" data-theme="b" id="tab-productos-1" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasxProducto();">
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
@@ -1012,7 +1012,7 @@
         <!-- FIN PAGINA TOP PRODUCTOS -->
 
         <!-- INICIO PAGINA TOP PRODUCTOS 2 -->
-        <section data-role="page" data-theme="b" id="tab-productos-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaProductos();graficarHistograma()">
+        <section data-role="page" data-theme="b" id="tab-productos-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxProducto();graficarHistograma()">
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
@@ -1164,7 +1164,7 @@
         <!-- FIN PAGINA TOP VENTASXCLIENTE -->
 
         <!-- INICIO PAGINA TOP VENTASXVENDEDOR -->
-        <section data-role="page" data-theme="b" id="top-ventasxvend" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasXVendedor();graficarHistogramaVendedores()">
+        <section data-role="page" data-theme="b" id="top-ventasxvend" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasXVendedor();;NetearDivsTopGeneral();graficarHistogramaVendedores()">
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
@@ -1200,7 +1200,7 @@
         <!-- FIN PAGINA TOP VENTASXVENDEDOR -->
         
         <!-- INICIO PAGINA TOP PRODUCTOS -->
-        <section data-role="page" data-theme="b" id="top-ventasxprod" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaProductos();graficarHistogramaProductos()">
+        <section data-role="page" data-theme="b" id="top-ventasxprod" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasxProducto();NetearDivsTopGeneral();graficarHistogramaProductos()">
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
@@ -1209,10 +1209,10 @@
                 <nav data-role="navbar">
                     <ul>
                         <li>
-                            <a data-role="tab" href="#top-ventasxvend" class="ui-btn-active" style="background: #5393c5"><span data-lang-id="lang125">Tabulada</span></a>
+                            <a data-role="tab" href="#top-ventasxprod" class="ui-btn-active" style="background: #5393c5"><span data-lang-id="lang125">Tabulada</span></a>
                         </li>
                         <li>
-                            <a data-role="tab" href="#tab-ventasvend-2" data-transition="none"><span data-lang-id="lang126">Gráfica</span></a>
+                            <a data-role="tab" href="#tab-ventasprod-2" data-transition="none"><span data-lang-id="lang126">Gráfica</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -1222,7 +1222,7 @@
                 <br /><br />
                 <div id="header"></div>
                 <p style="font-size:0.95em;">A continuación se muestra un listado con los mejores vendedores en el almacén</p>
-                <table width="100%" border="0" id="tab-ventasxvendedores-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+                <table width="100%" border="0" id="tab-ventasxproductos-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
                     <thead style="background: #d0e841">
                         <tr>
                             <th>Código</th>
@@ -1310,7 +1310,7 @@
         <!-- FIN MEN VENTAS -->
         
         <!-- INICIO PAGINA TOP VENTAS X PRODUCTOS 2 -->
-        <section data-role="page" data-theme="b" id="tab-ventasprod-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasXVendedor();NetearDivsTopGeneral();graficarHistogramaVendedores()">
+        <section data-role="page" data-theme="b" id="tab-ventasprod-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxProducto();NetearDivsTopGeneral();graficarHistogramaProductos()">
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
