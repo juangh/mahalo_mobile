@@ -1,0 +1,61 @@
+jQuery(document).on("ready", init);
+function init()
+{   
+    $(document).css('border','1px solid green');
+    if (localStorage["idioma"] === "en") {
+        $.each($("select option"), function() {
+            $("[data-lang-id=lang121]").text("All");
+        });
+    }
+    var fecha = getCurrentDate(new Date().toString()); 
+    $("#date_inicial").val(fecha); 
+    $("#date_corte").val(fecha); 
+    $("#date_inicial_transacciones").val(fecha); 
+    $("#date_corte_transacciones").val(fecha); 
+    new JsDatePick({ useMode:2, target:"date_inicial", dateFormat:"%Y-%m-%d", cellColorScheme:"armygreen" });
+    new JsDatePick({ useMode:2, target:"date_corte", dateFormat:"%Y-%m-%d", cellColorScheme:"armygreen" });   
+    new JsDatePick({ useMode:2, target:"date_inicial_transacciones", dateFormat:"%Y-%m-%d", cellColorScheme:"armygreen" });
+    new JsDatePick({ useMode:2, target:"date_corte_transacciones", dateFormat:"%Y-%m-%d", cellColorScheme:"armygreen" });
+}
+
+function loadInit()
+{
+    var usuario = '';
+    mostrarLogin();
+    iniciarCarrusel(usuario);
+}
+setTimeout(cron, 5000);
+function refrescarPaginaActual()
+{
+    var path = jQuery.mobile.activePage.data('url');
+    var elemento = jQuery('#' + path).attr('data-reload');
+    if (elemento === 'yes') {
+        jQuery.mobile.changePage('#' + path, {allowSamePageTransition: true});
+    }
+}
+function ejecutaJsInModo()
+{
+    path = jQuery.mobile.activePage.data('url');
+    var elemento = jQuery('#' + path).attr('data-dyn');
+
+    if (elemento === 'yes') {
+        var dataIn = jQuery('#' + path).attr('data-in');
+        try {
+            eval(dataIn);
+        }
+        catch (e) {
+            alert('Error en función:' + dataIn + '--' + e.message);
+        }
+    }
+}
+function cron()
+{
+    refrescarPaginaActual();
+    setTimeout(cron, 5000);
+}
+function refrescarManual()
+{
+    pagina_anterior = jQuery.mobile.activePage.data('url');
+    jQuery.mobile.changePage('#' + pagina_anterior, {allowSamePageTransition: true});
+    recargarManual = true;
+}
