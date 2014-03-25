@@ -109,6 +109,7 @@ function irHomeMenuSlide(posicion)
 
 function contarCargaPaginas()
 {
+    console.log(pagina);
     jQuery(".btnAtras").on("click", function() {
         irAtras();
     });
@@ -117,28 +118,9 @@ function contarCargaPaginas()
     if (curpath === "pagina-facturacion") {
         traerValoresGestionUsuario();
     }
-    if (curpath === "top-ventasxclientes") {
-
-    }
-    if (curpath === "top-ventasxvend") {
-
-    }
-
     var dinamica = breadcrumbs[selector + curpath];
     var salida = jQuery.inArray(curpath, historial);
     var last = "";
-
-    function executeChart() {
-        eval(drawChart());
-        eval(drawChartPie());
-        eval(drawChartLine());
-    }
-
-    if (curpath === "tab-productos-2") {
-        $(window).resize(function() {
-            executeChart();
-        });
-    }
 
     if (pagina_anterior === "detalles-ventas-general") {
         $("#informe-ventas-general").attr("data-in", "tabVentasGeneral3()");
@@ -305,6 +287,11 @@ function contarCargaPaginas()
                 "<a href='javascript:refrescarManual()'>" +
                 "<img class='loader' onclick='' src='img/home/refrescar20x20.png' width='20' height='20' /></a></div>");
     }
+    
+    if ((curpath === "top-ventasxclientes") || (curpath === "top-ventasxvend") || (curpath === "top-ventasxprod")){
+        pagina=2;
+    }
+    
     ejecutaJsInModo();
     setTagLanguage();
     if (recargarManual === true) {
