@@ -109,7 +109,6 @@ function irHomeMenuSlide(posicion)
 
 function contarCargaPaginas()
 {
-    console.log(pagina);
     jQuery(".btnAtras").on("click", function() {
         irAtras();
     });

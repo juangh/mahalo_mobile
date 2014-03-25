@@ -2,6 +2,7 @@ function NetearDivsTopGeneral() {
     jQuery("#contenidoGraficaVentas").html('');
     jQuery("#contenidoGraficaVendedores").html('');
     jQuery("#contenidoGraficaProductos").html('');
+    jQuery("#contenidoGraficaDescuentos").html('');
 }
 function toCurrency(cnt) {
     cnt = cnt.toString().replace(/\$|\,/g, '');
@@ -180,7 +181,6 @@ function graficarTortaVendedores()
             $current = $("canvas.peity:nth-last-child(" + posicion + ")");
             inicioTortaVendedores = false;
         }
-
     }
 }
 function graficarLineaVendedores()
@@ -276,17 +276,79 @@ function graficarTortaProductos()
             $current = $("canvas.peity:nth-last-child(" + posicion + ")");
             inicioTortaProductos = false;
         }
-
     }
 }
-function graficarLineaProductos()
+function graficarHistogramaDescuentos()
 {
-    var GRAFICA = 'linea_productos';
+    var GRAFICA = 'histograma_descuentos';
     var posicion = 0;
-    jQuery("canvas.peity").removeClass("histProductos").removeClass("barsProductos");
-    jQuery("#histogramaProductos").css("background", "#2f2f2f");
-    jQuery("#tortaProductos").css("background", "#2f2f2f");
-    jQuery("#puntosProductos").css("background", "#78bde7");
+    jQuery("canvas.peity").last().removeClass("barsDescuentos").removeClass("points");
+    jQuery("#histogramaDescuentos").css("background", "#78bde7");
+    jQuery("#tortaDescuentos").css("background", "#2f2f2f");
+    jQuery("#puntosDescuentos").css("background", "#2f2f2f");
+    jQuery.fn.peity.defaults.bar = {colours: ["#4d89f9"], delimiter: ",", height: "100%", max: null, min: 0, spacing: 1, width: "100%"};
+    var puntos = traerTop10Productos();
+    if (puntos) {
+        var barras = "";
+        for (var i = 0; i <= puntos.size; i++) {
+            barras = barras + "," + puntos[i]['y'];
+        }
+        jQuery("#contenidoGraficaDescuentos").html('');
+        jQuery("#contenidoGraficaDescuentos").html('<div id="barDescuentos" style="display:none;"></div><div id="pieDescuentos" style="display:none;"></div><div id="lineDescuentos" style="display:none;"></div>');
+        jQuery("#barDescuentos").text(barras.substr(1));
+        jQuery("#barDescuentos").peity("bar");
+        jQuery("#contenidoGraficaDescuentos").append($("canvas.peity"));
+        for (var i = 0; i < $("canvas.peity").length; i++) {
+            if ($("canvas.peity")[i].id === GRAFICA) {
+                posicion = i;
+            }
+        }
+        if (inicioHistogramaDescuentos) {
+            $current = $("canvas.peity:nth-last-child(" + posicion + ")");
+            inicioHistogramaDescuentos = false;
+        }
+    }
+}
+function graficarTortaDescuentos()
+{
+    var GRAFICA = 'torta_descuentos';
+    var posicion = 0;
+    jQuery("canvas.peity").removeClass("histDescuentos").removeClass("pointsDescuentos");
+    jQuery("#histogramaDescuentos").css("background", "#2f2f2f");
+    jQuery("#tortaDescuentos").css("background", "#78bde7");
+    jQuery("#puntosDescuentos").css("background", "#2f2f2f");
+    jQuery.fn.peity.defaults.pie = {colours: ["#ff9900", "#fff4dd", "#ffd592"], delimiter: null, diameter: "100%", height: null, width: null};
+    var puntos = traerTop10Productos();
+    if (puntos) {
+        var barras = "";
+        for (var i = 0; i <= puntos.size; i++) {
+            barras = barras + "," + puntos[i]['y'];
+        }
+        jQuery("#contenidoGraficaDescuentos").html('');
+        jQuery("#contenidoGraficaDescuentos").html('<div id="barDescuentos" style="display:none;"></div><div id="pieDescuentos" style="display:none;"></div><div id="lineDescuentos" style="display:none;"></div>');
+        jQuery("#pieDescuentos").text(barras.substr(1));
+        jQuery("#pieDescuentos").peity("pie");
+        jQuery("#contenidoGraficaDescuentos").append($("canvas.peity"));
+
+        for (var i = 0; i < $("canvas.peity").length; i++) {
+            if ($("canvas.peity")[i].id === GRAFICA) {
+                posicion = i;
+            }
+        }
+        if (inicioTortaDescuentos) {
+            $current = $("canvas.peity:nth-last-child(" + posicion + ")");
+            inicioTortaDescuentos = false;
+        }
+    }
+}
+function graficarLineaDescuentos()
+{
+    var GRAFICA = 'linea_descuentos';
+    var posicion = 0;
+    jQuery("canvas.peity").removeClass("histDescuentos").removeClass("barsDescuentos");
+    jQuery("#histogramaDescuentos").css("background", "#2f2f2f");
+    jQuery("#tortaDescuentos").css("background", "#2f2f2f");
+    jQuery("#puntosDescuentos").css("background", "#78bde7");
     jQuery.fn.peity.defaults.line = {colour: "#c6d9fd", strokeColour: "#4d89f9", strokeWidth: 1, delimiter: ",", height: "100%", max: null, min: 0, width: "100%"};
     var puntos = traerTop10Productos();
     if (puntos) {
@@ -294,20 +356,20 @@ function graficarLineaProductos()
         for (var i = 0; i <= puntos.size; i++) {
             barras = barras + "," + puntos[i]['y'];
         }
-        jQuery("#contenidoGraficaProductos").html('');
-        jQuery("#contenidoGraficaProductos").html('<div id="barProductos" style="display:none;"></div><div id="pieProductos" style="display:none;"></div><div id="lineProductos" style="display:none;"></div>');
+        jQuery("#contenidoGraficaDescuentos").html('');
+        jQuery("#contenidoGraficaDescuentos").html('<div id="barDescuentos" style="display:none;"></div><div id="pieDescuentos" style="display:none;"></div><div id="lineDescuentos" style="display:none;"></div>');
 
-        jQuery("#lineProductos").text(barras.substr(1));
-        jQuery("#lineProductos").peity("line");
-        jQuery("#contenidoGraficaProductos").append($("canvas.peity"));
+        jQuery("#lineDescuentos").text(barras.substr(1));
+        jQuery("#lineDescuentos").peity("line");
+        jQuery("#contenidoGraficaDescuentos").append($("canvas.peity"));
         for (var i = 0; i < $("canvas.peity").length; i++) {
             if ($("canvas.peity")[i].id === GRAFICA) {
                 posicion = i;
             }
         }
-        if (inicioLineaProductos) {
+        if (inicioLineaDescuentos) {
             $current = $("canvas.peity:nth-last-child(" + posicion + ")");
-            inicioLineaProductos = false;
+            inicioLineaDescuentos = false;
         }
     }
 }
@@ -340,6 +402,22 @@ function tabVentas3()
     jQuery("#contenido-tab-1").css('display', 'none');
     jQuery("#contenido-tab-2").css('display', 'none');
     jQuery("#contenido-tab-3").css({'display': 'block', 'margin-top': '30px', 'padding': '0 20px'});
+}
+function traerTop10Descuentos()
+{
+    var id_query = "busqueda_top_descuentos";
+    var sql = "select first 10 vr_descuento from h_ventas order by 1 desc";
+    xmlQueryDB(sql, id_query, 1, false, ruta);
+    var ar_status = getStatusDB(id_query);
+    var size = ar_status['numrows'] - 1;
+    var ar_descuentos = [];
+    var puntos = {};
+    for (var u = 0; u <= size; u++) {
+        ar_descuentos[u] = xmlGetRow(id_query, u + 1, 0)['vr_descuento'];
+        puntos[u] = {x: ar_descuentos[u]}; 
+    }
+    puntos.size = size;
+    return puntos;
 }
 function traerTop10Productos()
 {
@@ -450,5 +528,22 @@ function llenarTablaVentasxProducto()
         filas[i].setAttribute("style", "text-align:center");
         filas[i].innerHTML = "<td>" + datos[i]['x'] + "</td>" + '<td>' + datos[i]['y'] + "</td>";
         document.getElementById("tab-ventasxproductos-1").appendChild(filas[i]);
+    }
+}
+function llenarTablaVentasxDescuento()
+{
+    var datos = traerTop10Descuentos();
+    var size = datos.size;
+    var filas = [];
+    for (var i = 0; i < size; i++) {
+        document.getElementById("tab-ventasxdescuentos-1").innerHTML = "";
+    }
+    document.getElementById("tab-ventasxdescuentos-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th>Descuento</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    for (var i = 0; i < size; i++) {
+        filas[i] = document.createElement("tr");
+        filas[i].setAttribute("id", "tr_" + i);
+        filas[i].setAttribute("style", "text-align:center");
+        filas[i].innerHTML = "<td>" + datos[i]['x'] + "</td>";
+        document.getElementById("tab-ventasxdescuentos-1").appendChild(filas[i]);
     }
 }
