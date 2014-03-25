@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns		= "http://www.w3.org/ns/widgets"
+        xmlns:gap	= "http://phonegap.com/ns/1.0"
+        id		= "com.mahalo.mobile"
+        version 	= "1.0.0">
+
+    <name>Mahalo Mobile 1.0</name>
+
+    <description>
+        Mahalo Mobile
+    </description>
+
+    <author href="http://mahalo.saas.com.co"
+                email="contacto@websaas.net.co">
+        Mahalo
+    </author>
+
+    <gap:platforms>
+        <gap:platform name="android" minVersion="4.0" />
+        <gap:platform name="webos" />
+        <gap:platform name="symbian.wrt" />
+        <gap:platform name="blackberry" project="widgets"/>
+    </gap:platforms>
+
+    <gap:splash src="appcapture.png" />
+	
+    <icon src="img/icono-mahalo.png" gap:role="default" />
+    <icon src="img/icono-mahalo.png" width="96" height="96" />
+    <icon src="img/icono-mahalo.png" width="72" height="72" />
+    <icon src="img/icono-mahalo.png" width="48" height="48" />
+    <icon src="img/icono-mahalo.png" width="36" height="36" />
+	
+    <plugin name="Storage" value="org.apache.cordova.Storage" />
+    <plugin name="SQLitePlugin" value="com.phonegap.plugin.sqlitePlugin.SQLitePlugin"/>
+
+    <access origin="http://200.31.19.39" subdomains="true" />
+    <access origin="http://192.168.2.2" subdomains="true" />
+    <access origin="http://192.168.2.2/des_juan/js/core/bridge" subdomains="true" />
+    <access origin="http://192.168.2.2/portalmahalo_juan" subdomains="true" />
+    <access origin="http://192.168.2.2/portalmahalo_juan/formularios/movimientos/forms/form.php" subdomains="true" />
+    <access origin="http://schemas.xmlsoap.org/soap/encoding/" subdomains="true" />
+    <access origin="http://www.w3.org/2001/XMLSchema-instance" subdomains="true" />
+    <access origin="http://schemas.xmlsoap.org/soap/envelope/" subdomains="true" />
+    <access origin="http://mahalopr.saas.com.co" subdomains="true" />
+    <access origin="http://mahalo.saas.com.co" subdomains="true" />
+    <access origin="http://mahalopr.saas.com.co/pos/" subdomains="true" />
+    <access origin="http://mahalopr.saas.com.co/portalmahalo_dllo/" subdomains="true" />
+	<access origin="http://mahalo.saas.com.co/pos/" subdomains="true" />
+    <access origin="http://mahalo.saas.com.co/portalmahalo_calidad/" subdomains="true" />
+</widget>
