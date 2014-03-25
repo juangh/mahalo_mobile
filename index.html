@@ -1118,7 +1118,7 @@
                         <li><a href="#top-ventasxclientes" data-transition="flip" data-lang-id="" onclick="llenarTablaVentasXCliente()">Top Clientes</a></li>
                         <li><a href="#top-ventasxvend" data-transition="flip" data-lang-id="">Top Vendedores</a></li>
                         <li><a href="#top-ventasxdesc" data-transition="flip" data-lang-id="">Top Descuentos</a></li>
-                        <li><a href="#" data-transition="flip" data-lang-id="">Top Tipos Ventas</a></li>
+                        <li><a href="#top-ventasxtipoventas" data-transition="flip" data-lang-id="">Top Tipos Ventas</a></li>
                         <li><a href="#top-ventasxprod" data-transition="flip" data-lang-id="">Top Productos</a></li>
                     </ul>
                 </div>
@@ -1268,6 +1268,41 @@
             </div>
         </section>
         <!-- FIN PAGINA TOP DESCUENTOS -->
+        
+        <!-- INICIO PAGINA TOP TIPOS DE VENTAS -->
+        <section data-role="page" data-theme="b" id="top-ventasxtipoven" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasxTiposVentas();NetearDivsTopGeneral();graficarHistogramaTiposVentas()">
+
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1>Top descuentos</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
+                <nav data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-role="tab" href="#top-ventasxtiposventas" class="ui-btn-active" style="background: #5393c5"><span data-lang-id="lang125">Tabulada</span></a>
+                        </li>
+                        <li>
+                            <a data-role="tab" href="#tab-ventastiposventas-2" data-transition="none"><span data-lang-id="lang126">Gráfica</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div data-role="content">
+                <br /><br />
+                <div id="header"></div>
+                <p style="font-size:0.95em;">A continuación se muestra un listado con los mejores vendedores en el almacén</p>
+                <table width="100%" border="0" id="tab-ventasxdescuentos-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+                    <thead style="background: #d0e841">
+                        <tr>
+                            <th>Descuentos</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center"></tbody>
+                </table>
+            </div>
+        </section>
+        <!-- FIN PAGINA TOP TIPOS DE VENTAS -->
 
         <!-- INICIO PAGINA TOP VENTAS X CLIENTE 2 -->
         <section data-role="page" data-theme="b" id="tab-ventasclientes-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasXCliente();NetearDivsTopGeneral();graficarHistogramaVentas()">
@@ -1415,7 +1450,43 @@
             </div>
         </section>
         <!-- FIN TOP DESCUENTOS -->
+        
+        <!-- INICIO PAGINA TOP 10 VENTAS POR TIPO DE VENTA -->
+        <section data-role="page" data-theme="b" id="tab-ventasdesc-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxTiposVentas();NetearDivsTopGeneral();graficarHistogramaTiposVentas()">
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1>Top tipos de ventas</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
+                <nav data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-role="tab" href="#top-ventasxtipoventas"><span data-lang-id="lang125">Tabular</span></a>
+                        </li>
+                        <li>
+                            <a data-role="tab" href="#tab-ventastipoventas-2" class="ui-btn-active" style="background: #5393c5" data-transition="none"><span data-lang-id="lang126">Gráficas</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
 
+            <br />
+            <div id="content-tiposventas-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
+                <br />
+                <nav style="padding-top:10px; height: 27px;">
+                    <div id="histogramaTiposVentas" onclick="graficarHistogramaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Histograma</div>
+                    <div id="tortaTiposVentas" onclick="graficarTortaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Torta</div>
+                    <div id="puntosDescuentos" onclick="graficarLineaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;">Puntos</div>
+                </nav>
+                <br />
+                <div id="contenidoGraficaTiposVentas" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
+                    <div id="barDescuentos" style="display:none;"></div>
+                    <div id="pieDescuentos" style="display:none;"></div>
+                    <div id="lineDescuentos" style="display:none;"></div>
+                </div>                
+            </div>
+        </section>
+        <!-- FIN TOP 10 VENTAS POR TIPO DE VENTA -->
+        
         <!-- INICIO JAVASCRIPT -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/core/datos/QueryDB.js"></script>
