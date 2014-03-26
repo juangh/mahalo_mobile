@@ -3,6 +3,7 @@ function NetearDivsTopGeneral() {
     jQuery("#contenidoGraficaVendedores").html('');
     jQuery("#contenidoGraficaProductos").html('');
     jQuery("#contenidoGraficaDescuentos").html('');
+    jQuery("#contenidoGraficaTiposVentas").html('');
 }
 function toCurrency(cnt) {
     cnt = cnt.toString().replace(/\$|\,/g, '');
@@ -278,11 +279,43 @@ function graficarTortaProductos()
         }
     }
 }
+function graficarLineaProductos()
+{
+    var GRAFICA = 'linea_productos';
+    var posicion = 0;
+    jQuery("canvas.peity").removeClass("histProductos").removeClass("barsProductos");
+    jQuery("#histogramaProductos").css("background", "#2f2f2f");
+    jQuery("#tortaProductos").css("background", "#2f2f2f");
+    jQuery("#puntosProductos").css("background", "#78bde7");
+    jQuery.fn.peity.defaults.line = {colour: "#c6d9fd", strokeColour: "#4d89f9", strokeWidth: 1, delimiter: ",", height: "100%", max: null, min: 0, width: "100%"};
+    var puntos = traerTop10Productos();
+    if (puntos) {
+        var barras = "";
+        for (var i = 0; i <= puntos.size; i++) {
+            barras = barras + "," + puntos[i]['y'];
+        }
+        jQuery("#contenidoGraficaProductos").html('');
+        jQuery("#contenidoGraficaProductos").html('<div id="barProductos" style="display:none;"></div><div id="pieProductos" style="display:none;"></div><div id="lineProductos" style="display:none;"></div>');
+
+        jQuery("#lineProductos").text(barras.substr(1));
+        jQuery("#lineProductos").peity("line");
+        jQuery("#contenidoGraficaProductos").append($("canvas.peity"));
+        for (var i = 0; i < $("canvas.peity").length; i++) {
+            if ($("canvas.peity")[i].id === GRAFICA) {
+                posicion = i;
+            }
+        }
+        if (inicioLineaProductos) {
+            $current = $("canvas.peity:nth-last-child(" + posicion + ")");
+            inicioLineaProductos = false;
+        }
+    }
+}
 function graficarHistogramaDescuentos()
 {
     var GRAFICA = 'histograma_descuentos';
     var posicion = 0;
-    jQuery("canvas.peity").last().removeClass("barsDescuentos").removeClass("points");
+    jQuery("canvas.peity").last().removeClass("barsDescuentos").removeClass("pointsDescuentos");
     jQuery("#histogramaDescuentos").css("background", "#78bde7");
     jQuery("#tortaDescuentos").css("background", "#2f2f2f");
     jQuery("#puntosDescuentos").css("background", "#2f2f2f");
@@ -409,7 +442,7 @@ function graficarTortaTiposVentas()
     var GRAFICA = 'torta_tipos_ventas';
     var posicion = 0;
     jQuery("canvas.peity").removeClass("histTiposVentas").removeClass("pointsTiposVentas");
-    jQuery("#histogramaDescuentos").css("background", "#2f2f2f");
+    jQuery("#histogramaTiposVentas").css("background", "#2f2f2f");
     jQuery("#tortaTiposVentas").css("background", "#78bde7");
     jQuery("#puntosTiposVentas").css("background", "#2f2f2f");
     jQuery.fn.peity.defaults.pie = {colours: ["#ff9900", "#fff4dd", "#ffd592"], delimiter: null, diameter: "100%", height: null, width: null};
@@ -501,7 +534,7 @@ function tabVentas3()
 function traerTop10TiposVentas()
 {
     var id_query = "busqueda_top_tipos_ventas";
-    var sql = "select c_tipo_venta,sum(vr_subtotal) from h_ventas group by 1 order by 2 desc";
+    var sql = "select first 10 c_tipo_venta, sum(vr_subtotal) from h_ventas group by 1 order by 2 desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;
@@ -659,20 +692,20 @@ function llenarTablaVentasxDescuento()
         document.getElementById("tab-ventasxdescuentos-1").appendChild(filas[i]);
     }
 }
-function llenarTablaVentasxTipoVentas()
+function llenarTablaVentasxTiposVentas()
 {
     var datos = traerTop10TiposVentas();
     var size = datos.size;
     var filas = [];
     for (var i = 0; i < size; i++) {
-        document.getElementById("tab-ventasxtiposventas-1").innerHTML = "";
+        document.getElementById("tab-ventasxtipoventas-1").innerHTML = "";
     }
-    document.getElementById("tab-ventasxtiposventas-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th>Tipo de Venta</th>" + "<th># de Ventas</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxtipoventas-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th>Tipo de Venta</th>" + "<th>Cantidad de Ventas</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     for (var i = 0; i < size; i++) {
         filas[i] = document.createElement("tr");
         filas[i].setAttribute("id", "tr_" + i);
         filas[i].setAttribute("style", "text-align:center");
-        filas[i].innerHTML = "<td>" + datos[i]['x'] + "</td>";
-        document.getElementById("tab-ventasxtiposventas-1").appendChild(filas[i]);
+        filas[i].innerHTML = "<td>" + datos[i]['x'] + "</td>" + "<td>" + datos[i]['y'] + "</td>";
+        document.getElementById("tab-ventasxtipoventas-1").appendChild(filas[i]);
     }
 }
