@@ -287,7 +287,7 @@ function contarCargaPaginas()
                 "<img class='loader' onclick='' src='img/home/refrescar20x20.png' width='20' height='20' /></a></div>");
     }
     
-    if ((curpath === "top-ventasxclientes") || (curpath === "top-ventasxvend") || (curpath === "top-ventasxprod") || (curpath === "top-ventasxdesc")){
+    if ((curpath === "top-ventasxclientes") || (curpath === "top-ventasxvend") || (curpath === "top-ventasxprod") || (curpath === "top-ventasxalmacenes")){
         pagina=2;
     }
     
