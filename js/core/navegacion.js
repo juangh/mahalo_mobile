@@ -286,11 +286,7 @@ function contarCargaPaginas()
                 "<a href='javascript:refrescarManual()'>" +
                 "<img class='loader' onclick='' src='img/home/refrescar20x20.png' width='20' height='20' /></a></div>");
     }
-    
-    if ((curpath === "top-ventasxclientes") || (curpath === "top-ventasxvend") || (curpath === "top-ventasxprod") || (curpath === "top-ventasxalmacenes")){
-        pagina=2;
-    }
-    
+
     ejecutaJsInModo();
     setTagLanguage();
     if (recargarManual === true) {
@@ -337,7 +333,7 @@ function contarCargaPaginas()
                     break;
                 case CTE_TECLADO + (k) :
                     permisos[k] = roles[ CTE_ROLES + (typeuser) ][ CTE_TECLADO + k ];
-                    break;
+                    break; 
                 case CTE_TECLADO + (k) :
                     permisos[k] = roles[ CTE_ROLES + (typeuser) ][ CTE_TECLADO + k ];
                     break;
@@ -353,10 +349,13 @@ function contarCargaPaginas()
             }
         }
     }
+    if ((curpath === "top-ventasxclientes") || (curpath === "top-ventasxvend") || (curpath === "top-ventasxprod") || (curpath === "top-ventasxdesc") || (curpath === "#top-ventasxtipoventas") || (curpath === "top-ventasxalmacenes")) {
+        pagina = 2;
+    } 
     pagina_anterior = curpath;
 }
 
-function initVentasGeneral() 
+function initVentasGeneral()
 {
     $("#frmChoiceFilters").trigger('create');
     $("#txt_cedula").val("");
@@ -416,7 +415,7 @@ function selectCamposInventario() {
     if (jQuery("input[name=checkbox-h-7]").is(":checked")) {
         cambiarCampos(37, 7, 'in');
     } else {
-        cambiarCampos(37, 7, 'out'); 
+        cambiarCampos(37, 7, 'out');
     }
 }
 
