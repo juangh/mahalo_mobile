@@ -744,7 +744,7 @@ function llenarTablaVentasXCliente()
     for (var i = 0; i < size; i++) {
         document.getElementById("tab-ventasxclientes-1").innerHTML = "";
     }
-    document.getElementById("tab-ventasxclientes-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'> "+espacio+"Registro</th>" + "<th align='left'> "+espacio+"Cliente</th>" + "<th align='right'>Vendido"+espacio+"</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxclientes-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'>&nbsp;&nbsp;<span data-lang-id='lang137'>Registro</span></th>" + "<th align='left'>&nbsp;&nbsp;<span data-lang-id='lang138'>Cliente</span></th>" + "<th align='right'><span data-lang-id='lang139'>Ventas</span>&nbsp;&nbsp;</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     var total;
     for (var i = 0; i <= size; i++) {
         total = toCurrency(datos[i]['y']);
@@ -766,7 +766,7 @@ function llenarTablaVentasXVendedor()
     for (var i = 0; i < size; i++) {
         document.getElementById("tab-ventasxvendedores-1").innerHTML = "";
     }
-    document.getElementById("tab-ventasxvendedores-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'> "+espacio+"Registro</th>" + "<th align='left'>"+espacio+"Vendedor</th>" + "<th align='right'>Vendido"+espacio+"</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxvendedores-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'>"+espacio+"<span data-lang-id='lang137'>Registro</span></th>" + "<th align='left'>"+espacio+"<span data-lang-id='lang141'>Vendedor</span></th>" + "<th align='right'><span data-lang-id='lang139'>Vendido</span>"+espacio+"</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     var total;
     for (var i = 0; i <= size; i++) {
         total=toCurrency(datos[i]['y']);
@@ -788,7 +788,7 @@ function llenarTablaVentasxProducto()
     for (var i = 0; i < size; i++) {
         document.getElementById("tab-ventasxproductos-1").innerHTML = "";
     }
-    document.getElementById("tab-ventasxproductos-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'> "+espacio+"Registro</th>" + "<th align='left'>"+espacio+"Barra</th>" + "<th align='right'>Total"+espacio+"</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxproductos-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'> "+espacio+"<span data-lang-id='lang137'>Registro</span></th>" + "<th align='left'>"+espacio+"<span data-lang-id='lang144'>Barra</span></th>" + "<th align='right'><span data-lang-id='lang139'>Ventas</span>"+espacio+"</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     var total;
     for (var i = 0; i < size; i++) {
         total=toCurrency(datos[i]['y']);
@@ -807,7 +807,7 @@ function llenarTablaVentasxDescuento()
     for (var i = 0; i < size; i++) {
         document.getElementById("tab-ventasxdescuentos-1").innerHTML = "";
     }
-    document.getElementById("tab-ventasxdescuentos-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'>&nbsp;&nbsp;Registro</th>" + "<th align='left'>&nbsp;&nbsp;Vendido</th>" + "<th align='left'>Descuento</th>" + "<th align='right'>Porcentaje&nbsp;&nbsp;</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxdescuentos-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'>&nbsp;&nbsp;<span data-lang-id='lang137'>Registro</span></th>" + "<th align='left'>&nbsp;&nbsp;<span data-lang-id='lang139'>Vendido</span></th>" + "<th align='left'><span data-lang-id='lang147'>Descuento</span></th>" + "<th align='right'><span data-lang-id='lang148'>Porcentaje</span>&nbsp;&nbsp;</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     var numero;
     var descuento;
     for (var i = 0; i < size; i++) {
@@ -828,14 +828,14 @@ function llenarTablaVentasxTiposVentas()
     for (var i = 0; i < size; i++) {
         document.getElementById("tab-ventasxtipoventas-1").innerHTML = "";
     }
-    document.getElementById("tab-ventasxtipoventas-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'>&nbsp;&nbsp;Registro</th>" + "<th align='left'>Tipo de venta</th>" + "<th align='right'>Vendido&nbsp;&nbsp;</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxtipoventas-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr>" + "<th align='left'>&nbsp;&nbsp;<span data-lang-id='lang137'>Registro</span></th>" + "<th align='left'><span data-lang-id='lang150'>Tipo de venta</span></th>" + "<th align='right'><span data-lang-id='lang139'>Ventas</span>&nbsp;&nbsp;</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     var total;
     for (var i = 0; i < size; i++) {
         total = toCurrency(datos[i]['y']);
         filas[i] = document.createElement("tr");
         filas[i].setAttribute("id", "tr_" + i);
         filas[i].setAttribute("style", "text-align:center");
-        filas[i].innerHTML = "<td align='left'>&nbsp;&nbsp;" + (i+1) + "<td align='left'>" + datos[i]['x'] + "</td>" + "<td align='right'>$ " + total.substr(1)+ "&nbsp;&nbsp;</td>";
+        filas[i].innerHTML = "<td align='left'>&nbsp;&nbsp;" + (i+1) + "<td align='left'>" + datos[i]['x'] + "</td>" + "<td align='right'>$ " + total+ "&nbsp;&nbsp;</td>";
         document.getElementById("tab-ventasxtipoventas-1").appendChild(filas[i]);
     }
 }
@@ -847,7 +847,7 @@ function llenarTablaVentasxAlmacenes()
     for (var i = 0; i < size; i++) {
         document.getElementById("tab-ventasxalmacenes-1").innerHTML = "";
     }
-    document.getElementById("tab-ventasxalmacenes-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr align='left'>" + "<th align='left'>&nbsp;&nbsp;Registros</th>" + "<th align='left'>Almacenes</th>" + "<th align='right'>Vendido&nbsp;&nbsp;</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
+    document.getElementById("tab-ventasxalmacenes-1").innerHTML = "<thead style='background: #d0e841'>" + "<tr align='left'>" + "<th align='left'>&nbsp;&nbsp;<span data-lang-id='lang137'>Registros</span></th>" + "<th align='left'><span data-lang-id='lang153'>Almacenes</span></th>" + "<th align='right'><span data-lang-id='lang139'>Ventas</span>&nbsp;&nbsp;</th>" + "</tr>" + "</thead>" + "<tbody style='text-align: center'></tbody>";
     for (var i = 0; i < size; i++) {
         filas[i] = document.createElement("tr");
         filas[i].setAttribute("id", "tr_" + i);

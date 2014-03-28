@@ -977,7 +977,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top</h1>
+                <h1>Top ventas por almacén</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
                 <nav data-role="navbar">
                     <ul>
@@ -1107,7 +1107,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Tops Ventas</h1>
+                <h1 data-lang-id='lang130'>Tops Ventas</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
             </header>
 
@@ -1115,12 +1115,12 @@
                 <br>    
                 <div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="d">
                     <ul data-role="listview">
-                        <li><a href="#top-ventasxclientes" data-transition="flip" data-lang-id="" onclick="llenarTablaVentasXCliente()"><span data-lang-id=''>Top Ventas por Clientes</span></a></li>
-                        <li><a href="#top-ventasxvend" data-transition="flip" data-lang-id=""><span data-lang-id=''>Top Ventas por Vendedores</span></a></li>
-                        <li><a href="#top-ventasxdesc" data-transition="flip" data-lang-id=""><span data-lang-id=''>Top Ventas por Porcentaje de Descuento</span></a></li>
-                        <li><a href="#top-ventasxtipoventas" data-transition="flip" data-lang-id=""><span data-lang-id=''>Top Ventas por Tipos de Ventas</span></a></li>
-                        <li><a href="#top-ventasxprod" data-transition="flip" data-lang-id=""><span data-lang-id=''>Top Ventas por Productos</span></a></li>
-                        <li><a href="#top-ventasxalmacenes" data-transition="flip" data-lang-id=""><span data-lang-id=''>Top Ventas por Almacen</span></a></li>
+                        <li><a href="#top-ventasxclientes" data-transition="flip" data-lang-id="" onclick="llenarTablaVentasXCliente()"><span data-lang-id='lang129'>Top ventas por cliente</span></a></li>
+                        <li><a href="#top-ventasxvend" data-transition="flip" data-lang-id=""><span data-lang-id='lang131'>Top ventas por vendedor</span></a></li>
+                        <li><a href="#top-ventasxdesc" data-transition="flip" data-lang-id=""><span data-lang-id='lang132'>Top ventas por porcentaje de descuento</span></a></li>
+                        <li><a href="#top-ventasxtipoventas" data-transition="flip" data-lang-id=""><span data-lang-id='lang133'>Top ventas por tipo de venta</span></a></li>
+                        <li><a href="#top-ventasxprod" data-transition="flip" data-lang-id=""><span data-lang-id='lang134'>Top ventas por producto</span></a></li>
+                        <li><a href="#top-ventasxalmacenes" data-transition="flip" data-lang-id=""><span data-lang-id='lang135'>Top ventas por almacén</span></a></li>
                     </ul>
                 </div>
             </div>
@@ -1132,7 +1132,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top clientes</h1>
+                <h1 data-lang-id='lang129'>Top Ventas por cliente</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
                 <nav data-role="navbar">
                     <ul>
@@ -1149,12 +1149,13 @@
             <div id="content-top-ventas" data-role="content">
                 <br /><br />
                 <div id="header"></div>
-                <p style="font-size:0.95em;" id="antesTabla">A continuación se muestra un listado con los mejores clientes</p>
+                <p style="font-size:0.95em;" id="antesTabla" data-lang-id='lang136'>A continuación se muestra un listado con los mejores clientes:</p>
                 <table width="100%" border="0" id="tab-ventasxclientes-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
                     <thead style="background: #d0e841">
                         <tr>
-                            <th>Cliente</th>
-                            <th>Vendido (COP) </th>
+                            <th data-lang-id='lang137'>Registro</th>
+                            <th data-lang-id='lang138'>Cliente</th>
+                            <th data-lang-id='lang139'>Ventas</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center"></tbody>
@@ -1168,7 +1169,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top vendedores</h1>
+                <h1 data-lang-id='lang131'>Top ventas por vendedor</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
                 <nav data-role="navbar">
                     <ul>
@@ -1185,13 +1186,13 @@
             <div data-role="content">
                 <br /><br />
                 <div id="header"></div>
-                <p style="font-size:0.95em;">A continuación se muestra un listado con los mejores vendedores</p>
+                <p style="font-size:0.95em;" data-lang-id='lang140'>A continuación se muestra un listado con los mejores vendedores:</p>
                 <table width="100%" border="0" id="tab-ventasxvendedores-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
                     <thead style="background: #d0e841">
                         <tr>
-                            <th align='left'>&nbsp;&nbsp;Registro</th>
-                            <th align='left'>Vendedor</th>
-                            <th align='right'>Vendido&nbsp;&nbsp;</th>
+                            <th align='left' data-lang-id='lang137'>&nbsp;&nbsp;</th>
+                            <th align='left' data-lang-id='lang141'></th>
+                            <th align='right' data-lang-id='lang139'>&nbsp;&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center"></tbody>
@@ -1205,7 +1206,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top productos</h1>
+                <h1 data-lang-id='lang142'>Top ventas por producto</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
                 <nav data-role="navbar">
                     <ul>
@@ -1222,13 +1223,13 @@
             <div data-role="content">
                 <br /><br />
                 <div id="header"></div>
-                <p style="font-size:0.95em;">A continuación se muestran los productos más vendidos</p>
+                <p style="font-size:0.95em;" data-lang-id='lang143'>A continuación se muestran los mejores productos:</p>
                 <table width="100%" border="0" id="tab-ventasxproductos-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
                     <thead style="background: #d0e841">
                         <tr>
-                            <th align='left'>&nbsp;&nbsp;Registro</th>
-                            <th align='left'>Barra</th>
-                            <th align='right'>Vendido&nbsp;&nbsp;</th>
+                            <th align='left' data-lang-id='lang137'>&nbsp;</th>
+                            <th align='left' data-lang-id='lang144'>&nbsp;</th>
+                            <th align='right' data-lang-id='lang139'>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center"></tbody>
@@ -1242,7 +1243,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top descuentos</h1>
+                <h1 data-lang-id='lang145'>Top ventas por porcentaje descuento</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
                 <nav data-role="navbar">
                     <ul>
@@ -1259,14 +1260,14 @@
             <div data-role="content">
                 <br /><br />
                 <div id="header"></div>
-                <p style="font-size:0.95em;">A continuación se muestra un listado con los mejores descuentos</p>
+                <p style="font-size:0.95em;" data-lang-id='lang146'>A continuación se muestra un listado con los mejores descuentos</p>
                 <table width="100%" border="0" id="tab-ventasxdescuentos-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
                     <thead style="background: #d0e841">
                         <tr>
-                            <th align='left'>&nbsp;&nbsp;Registro</th>
-                            <th align='left'>Vendido</th>
-                            <th align='left'>Descuento</th>
-                            <th align='right'>Porcentaje&nbsp;&nbsp;</th>
+                            <th align='left' data-lang-id='lang37'>&nbsp;</th>
+                            <th align='left' data-lang-id='lang139'>&nbsp;</th>
+                            <th align='left' data-lang-id='lang147'>&nbsp;</th>
+                            <th align='right' data-lang-id='lang148'>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center"></tbody>
@@ -1280,7 +1281,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top tipos ventas</h1>
+                <h1 data-lang-id='lang133'>Top ventas por tipo de venta</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
                 <nav data-role="navbar">
                     <ul>
@@ -1297,13 +1298,13 @@
             <div data-role="content">
                 <br /><br />
                 <div id="header"></div>
-                <p style="font-size:0.95em;">A continuación se muestra un listado con las ventas por los tipos de ventas</p>
+                <p style="font-size:0.95em;" data-lang-id='lang149'>A continuación se muestra un listado con las ventas por los tipos de ventas</p>
                 <table width="100%" border="0" id="tab-ventasxtipoventas-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
                     <thead style="background: #d0e841">
                         <tr>
-                            <th align='left'>Registro</th>
-                            <th align='left'>Tipo de venta</th>
-                            <th aling='right'>Cantidad de ventas</th>
+                            <th align='left'>&nbsp;</th>
+                            <th align='left'>&nbsp;</th>
+                            <th aling='right'>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center"></tbody>
@@ -1317,7 +1318,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top almacenes</h1>
+                <h1 data-lang-id='lang135'>Top ventas por almacén</h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
                 <nav data-role="navbar">
                     <ul>
@@ -1334,13 +1335,13 @@
             <div data-role="content">
                 <br /><br />
                 <div id="header"></div>
-                <p style="font-size:0.95em;">A continuación se muestra un listado con los almacenes que más vendieron</p>
+                <p style="font-size:0.95em;" data-lang-id='lang152'>A continuación se muestra un listado con los almacenes que más vendieron</p>
                 <table width="100%" border="0" id="tab-ventasxalmacenes-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
                     <thead style="background: #d0e841">
                         <tr>
-                            <th align='left'>&nbsp;&nbsp;Registro</th>
-                            <th align='left'>Almacen</th>
-                            <th align='right'>Ventas&nbsp;&nbsp;</th>
+                            <th align='left'>&nbsp;</th>
+                            <th align='left'>&nbsp;</th>
+                            <th align='right'>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody style="text-align: center"></tbody>
@@ -1354,7 +1355,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top ventas</h1>
+                <h1 data-lang-id='lang129'></h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
                 <nav data-role="navbar">
                     <ul>
@@ -1372,9 +1373,9 @@
             <div id="content-ventas-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
                 <br />
                 <nav style="padding-top:10px; height: 27px;">
-                    <div id="histogramaVentas" onclick="graficarHistogramaVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Histograma</div>
-                    <div id="tortaVentas" onclick="graficarTortaVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Torta</div>
-                    <div id="puntosVentas" onclick="graficarLineaVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;">Puntos</div>
+                    <div id="histogramaVentas" onclick="graficarHistogramaVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaVentas" onclick="graficarTortaVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosVentas" onclick="graficarLineaVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
                 </nav>
                 <br />
                 <div id="contenidoGraficaVentas" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
@@ -1391,7 +1392,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top vendedores</h1>
+                <h1 data-lang-id='lang131'></h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
                 <nav data-role="navbar">
                     <ul>
@@ -1409,9 +1410,9 @@
             <div id="content-vendedores-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
                 <br />
                 <nav style="padding-top:10px; height: 27px;">
-                    <div id="histogramaVendedores" onclick="graficarHistogramaVendedores();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Histograma</div>
-                    <div id="tortaVendedores" onclick="graficarTortaVendedores();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Torta</div>
-                    <div id="puntosVendedores" onclick="graficarLineaVendedores();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;">Puntos</div>
+                    <div id="histogramaVendedores" onclick="graficarHistogramaVendedores();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaVendedores" onclick="graficarTortaVendedores();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosVendedores" onclick="graficarLineaVendedores();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
                 </nav>
                 <br />
                 <div id="contenidoGraficaVendedores" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
@@ -1428,7 +1429,7 @@
 
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top productos</h1>
+                <h1 data-lang-id='lang132'></h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
                 <nav data-role="navbar">
                     <ul>
@@ -1446,9 +1447,9 @@
             <div id="content-productos-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
                 <br />
                 <nav style="padding-top:10px; height: 27px;">
-                    <div id="histogramaProductos" onclick="graficarHistogramaProductos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Histograma</div>
-                    <div id="tortaProductos" onclick="graficarTortaProductos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Torta</div>
-                    <div id="puntosProductos" onclick="graficarLineaProductos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;">Puntos</div>
+                    <div id="histogramaProductos" onclick="graficarHistogramaProductos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaProductos" onclick="graficarTortaProductos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosProductos" onclick="graficarLineaProductos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
                 </nav>
                 <br />
                 <div id="contenidoGraficaProductos" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
@@ -1464,7 +1465,7 @@
         <section data-role="page" data-theme="b" id="tab-ventasdesc-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxDescuento();NetearDivsTopGeneral();graficarHistogramaDescuentos()">
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top descuentos</h1>
+                <h1 data-lang-id='lang133'></h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
                 <nav data-role="navbar">
                     <ul>
@@ -1482,9 +1483,9 @@
             <div id="content-descuentos-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
                 <br />
                 <nav style="padding-top:10px; height: 27px;">
-                    <div id="histogramaDescuentos" onclick="graficarHistogramaDescuentos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Histograma</div>
-                    <div id="tortaDescuentos" onclick="graficarTortaDescuentos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Torta</div>
-                    <div id="puntosDescuentos" onclick="graficarLineaDescuentos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;">Puntos</div>
+                    <div id="histogramaDescuentos" onclick="graficarHistogramaDescuentos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaDescuentos" onclick="graficarTortaDescuentos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosDescuentos" onclick="graficarLineaDescuentos();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
                 </nav>
                 <br />
                 <div id="contenidoGraficaDescuentos" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
@@ -1500,7 +1501,7 @@
         <section data-role="page" data-theme="b" id="tab-ventastiposventas-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxTiposVentas();NetearDivsTopGeneral();graficarHistogramaTiposVentas()">
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top tipos de ventas</h1>
+                <h1 data-lang-id='lang134'></h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
                 <nav data-role="navbar">
                     <ul>
@@ -1518,9 +1519,9 @@
             <div id="content-tiposventas-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
                 <br />
                 <nav style="padding-top:10px; height: 27px;">
-                    <div id="histogramaTiposVentas" onclick="graficarHistogramaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Histograma</div>
-                    <div id="tortaTiposVentas" onclick="graficarTortaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Torta</div>
-                    <div id="puntosDescuentos" onclick="graficarLineaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;">Puntos</div>
+                    <div id="histogramaTiposVentas" onclick="graficarHistogramaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaTiposVentas" onclick="graficarTortaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosDescuentos" onclick="graficarLineaTiposVentas();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
                 </nav>
                 <br />
                 <div id="contenidoGraficaTiposVentas" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
@@ -1536,7 +1537,7 @@
         <section data-role="page" data-theme="b" id="tab-ventasalmacenes-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxAlmacenes();NetearDivsTopGeneral();graficarHistogramaAlmacenes()">
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
                 <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
-                <h1>Top tipos de ventas</h1>
+                <h1 data-lang-id='lang135'></h1>
                 <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
                 <nav data-role="navbar">
                     <ul>
@@ -1554,9 +1555,9 @@
             <div id="content-tiposventas-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
                 <br />
                 <nav style="padding-top:10px; height: 27px;">
-                    <div id="histogramaAlmacenes" onclick="graficarHistogramaAlmacenes();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Histograma</div>
-                    <div id="tortaAlmacenes" onclick="graficarTortaAlmacenes();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;">Torta</div>
-                    <div id="puntosAlmancenes" onclick="graficarLineaAlmacenes();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;">Puntos</div>
+                    <div id="histogramaAlmacenes" onclick="graficarHistogramaAlmacenes();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaAlmacenes" onclick="graficarTortaAlmacenes();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosAlmancenes" onclick="graficarLineaAlmacenes();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
                 </nav>
                 <br />
                 <div id="contenidoGraficaAlmacenes" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
