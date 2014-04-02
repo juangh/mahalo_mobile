@@ -399,7 +399,8 @@
                             <div><a id="btnActualizarTabla" onclick="tabVentasGeneral1()" data-theme="a" style="width:100%; float: left; margin:0; padding:0;" data-mini="true" data-role="button"><span data-lang-id="lang103">Filtros</span></a></div>
                             <br />
                             <br />
-                            <div><a id="btnActualizarTabla" onclick="tabVentasGeneral3();ejecutarVentas()();" data-theme="a" style="width:100%; float: left; margin:0; padding:0;" data-mini="true" data-role="button"><span data-lang-id="lang104">Consultar</span></a></div>
+                            <div><a id="btnActualizarTabla" onclick="tabVentasGeneral3();
+            ejecutarVentas()();" data-theme="a" style="width:100%; float: left; margin:0; padding:0;" data-mini="true" data-role="button"><span data-lang-id="lang104">Consultar</span></a></div>
                             <br />
                             <br />
                             <br />
@@ -1200,7 +1201,7 @@
             </div>
         </section>
         <!-- FIN PAGINA TOP VENTASXVENDEDOR -->
-        
+
         <!-- INICIO PAGINA TOP PRODUCTOS -->
         <section data-role="page" data-theme="b" id="top-ventasxprod" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasxProducto();NetearDivsTopGeneral();graficarHistogramaProductos()">
 
@@ -1237,7 +1238,7 @@
             </div>
         </section>
         <!-- FIN PAGINA TOP PRODUCTOS -->
-        
+
         <!-- INICIO PAGINA TOP DESCUENTOS -->
         <section data-role="page" data-theme="b" id="top-ventasxdesc" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasxDescuento();NetearDivsTopGeneral();graficarHistogramaDescuentos()">
 
@@ -1275,7 +1276,7 @@
             </div>
         </section>
         <!-- FIN PAGINA TOP DESCUENTOS -->
-        
+
         <!-- INICIO PAGINA TOP TIPOS DE VENTAS -->
         <section data-role="page" data-theme="b" id="top-ventasxtipoventas" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasxTiposVentas();NetearDivsTopGeneral();graficarHistogramaTiposVentas()">
 
@@ -1312,7 +1313,7 @@
             </div>
         </section>
         <!-- FIN PAGINA TOP TIPOS DE VENTAS -->
-        
+
         <!-- INICIO PAGINA TOP ALMACENES -->
         <section data-role="page" data-theme="b" id="top-ventasxalmacenes" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaVentasxAlmacenes();NetearDivsTopGeneral();graficarHistogramaAlmacenes()">
 
@@ -1423,7 +1424,7 @@
             </div>
         </section>
         <!-- FIN MEN VENTAS -->
-        
+
         <!-- INICIO PAGINA TOP VENTAS X PRODUCTOS 2 -->
         <section data-role="page" data-theme="b" id="tab-ventasprod-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxProducto();NetearDivsTopGeneral();graficarHistogramaProductos()">
 
@@ -1460,7 +1461,7 @@
             </div>
         </section>
         <!-- FIN TOP VENTAS POR PRODUCTOS 2 -->
-        
+
         <!-- INICIO PAGINA TOP DESCUENTOS -->
         <section data-role="page" data-theme="b" id="tab-ventasdesc-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxDescuento();NetearDivsTopGeneral();graficarHistogramaDescuentos()">
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
@@ -1496,7 +1497,7 @@
             </div>
         </section>
         <!-- FIN TOP DESCUENTOS -->
-        
+
         <!-- INICIO PAGINA TOP 10 VENTAS POR TIPO DE VENTA -->
         <section data-role="page" data-theme="b" id="tab-ventastiposventas-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxTiposVentas();NetearDivsTopGeneral();graficarHistogramaTiposVentas()">
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
@@ -1532,7 +1533,7 @@
             </div>
         </section>
         <!-- FIN TOP 10 VENTAS POR TIPO DE VENTA -->
-        
+
         <!-- INICIO PAGINA TOP 10 VENTAS POR ALMACEN  -->
         <section data-role="page" data-theme="b" id="tab-ventasalmacenes-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaVentasxAlmacenes();NetearDivsTopGeneral();graficarHistogramaAlmacenes()">
             <header data-role="header" style="display:inline-block; height:40px; width:100%">
@@ -1568,7 +1569,215 @@
             </div>
         </section>
         <!-- FIN TOP 10 VENTAS POR AlMACEN -->
+
         
+        <!-- INICIO TOPS MENUS -->
+        <section data-role="page" data-theme="b" id="tops-menus-kardex" style="background: #78bde7" data-transition="flip"> 
+
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1 data-lang-id=''>Tops Kardex</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
+            </header>
+
+            <div data-role="content" style="margin-top:-19px;">
+                <br>    
+                <div data-role="collapsible" data-collapsed="false" data-theme="b" data-content-theme="d">
+                    <ul data-role="listview">
+                        <li><a href="#top-kardexconcepto" data-transition="flip" data-lang-id="" onclick="llenarTablaKardexConcepto()"><span data-lang-id='lang129'>Top kardex por concepto</span></a></li>
+                        <li><a href="#top-kardexnit" data-transition="flip" data-lang-id=""><span data-lang-id='lang131'>Top compras x proveedor</span></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- FIN TOPS MENUS -->
+        
+        <!-- INICIO PAGINA TOP KARDEXXCONCEPTO -->
+        <section data-role="page" data-theme="b" id="top-kardexconcepto" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaKardexConcepto();">
+
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1 data-lang-id=''>Top Kardex por concepto</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
+                <nav data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-role="tab" href="#top-kardexconcepto" class="ui-btn-active" style="background: #5393c5"><span data-lang-id="lang125">Tabulada</span></a>
+                        </li>
+                        <li>
+                            <a data-role="tab" href="#tab-kardexconcepto-2" data-transition="none"><span data-lang-id="lang126">Gráfica</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="content-top-kardex" data-role="content">
+                <br /><br />
+                <div id="header"></div>
+                <p style="font-size:0.95em;" id="antesTabla" data-lang-id=''>A continuación se muestra un listado con los conceptos x kardex:</p>
+                <table width="100%" border="0" id="tab-kardexconcepto-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+                    <thead style="background: #d0e841">
+                        <tr>
+                            <th data-lang-id='lang137'>Registro</th>
+                            <th data-lang-id=''>Concepto</th>
+                            <th data-lang-id=''># Movimientos</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center"></tbody>
+                </table>
+            </div>
+        </section>
+        <!-- FIN PAGINA TOP KARDEXXCONCEPTO -->
+        
+        <!-- INICIO PAGINA TOP KARDEXXCONCEPTO -->
+        <section data-role="page" data-theme="b" id="top-kardexconcepto-2" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaKardexConcepto();">
+
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1 data-lang-id=''>Top Kardex por nit</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
+                <nav data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-role="tab" href="#top-kardexconcepto" class="ui-btn-active" style="background: #5393c5"><span data-lang-id="lang125">Tabulada</span></a>
+                        </li>
+                        <li>
+                            <a data-role="tab" href="#tab-kardexconcepto-2" data-transition="none"><span data-lang-id="lang126">Gráfica</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="content-top-kardexconcepto" data-role="content">
+                <br /><br />
+                <div id="header"></div>
+                <p style="font-size:0.95em;" id="antesTabla" data-lang-id=''>A continuación se muestra un listado con los conceptos x kardex:</p>
+                <table width="100%" border="0" id="tab-kardexconcepto-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+                    <thead style="background: #d0e841">
+                        <tr>
+                            <th data-lang-id='lang137'>Registro</th>
+                            <th data-lang-id=''>Concepto</th>
+                            <th data-lang-id=''># Movimientos</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center"></tbody>
+                </table>
+            </div>
+        </section>
+        <!-- FIN PAGINA TOP KARDEXXCONCEPTO -->
+        
+        <!-- INICIO PAGINA TOP KARDEXXCONCEPTO 2 -->
+        <section data-role="page" data-theme="b" id="tab-kardexconcepto-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaKardexConcepto();NetearDivsTopGeneral();graficarHistogramaKardexConcepto()">
+
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1 data-lang-id=''>Top kardex por nit</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
+                <nav data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-role="tab" href="#top-kardexconcepto"><span data-lang-id="lang125">Tabular</span></a>
+                        </li>
+                        <li>
+                            <a data-role="tab" href="#tab-kardexconcepto-2" class="ui-btn-active" style="background: #5393c5" data-transition="none"><span data-lang-id="lang126">Gráfica</span>s</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <br />
+            <div id="content-kardexnit-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
+                <br />
+                <nav style="padding-top:10px; height: 27px;">
+                    <div id="histogramaKardexConcepto" onclick="graficarHistogramaKardexConcepto();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaKardexConcepto" onclick="graficarTortaKardexConcepto();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosKardexConcepto" onclick="graficarLineaKardexConcepto();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
+                </nav>
+                <br />
+                <div id="contenidoGraficaConcepto" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
+                    <div id="barKardexConcepto" style="display:none;"></div>
+                    <div id="pieKardexConcepto" style="display:none;"></div>
+                    <div id="lineKardexConcepto" style="display:none;"></div>
+                </div>
+            </div>
+        </section>
+        <!-- FIN PAGINA TOP KARDEXXCONCEPTO 2--> 
+        
+        <!-- INICIO PAGINA TOP KARDEXNIT -->
+        <section data-role="page" data-theme="b" id="top-kardexnit" style="background: #78bde7" data-transition="flip" data-reload="yes" data-dyn="yes" data-in="llenarTablaKardexNit();">
+
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a href="#" class="btnAtras" data-transition="flip" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1 data-lang-id=''>Top Kardex por nit</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars"><span data-lang-id="lang17">Inicio</span></a>
+                <nav data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-role="tab" href="#top-kardexnit" class="ui-btn-active" style="background: #5393c5"><span data-lang-id="lang125">Tabulada</span></a>
+                        </li>
+                        <li>
+                            <a data-role="tab" href="#tab-kardexnit-2" data-transition="none"><span data-lang-id="lang126">Gráfica</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div id="content-top-kardexnit" data-role="content">
+                <br /><br />
+                <div id="header"></div>
+                <p style="font-size:0.95em;" id="antesTabla" data-lang-id=''>A continuación se muestra un listado con los conceptos x kardex:</p>
+                <table width="100%" border="0" id="tab-kardexnit-1" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b">
+                    <thead style="background: #d0e841">
+                        <tr>
+                            <th data-lang-id='lang137'>Registro</th>
+                            <th data-lang-id=''>Concepto</th>
+                            <th data-lang-id=''># Movimientos</th>
+                        </tr>
+                    </thead>
+                    <tbody style="text-align: center"></tbody>
+                </table>
+            </div>
+        </section>
+        <!-- FIN PAGINA TOP KARDEXNIT -->
+        
+        <!-- INICIO PAGINA TOP KARDEXNIT 2 -->
+        <section data-role="page" data-theme="b" id="tab-kardexnit-2" style="background: #78bde7" data-transition="flip" data-dyn="yes" data-in="llenarTablaKardexNit();NetearDivsTopGeneral();graficarHistogramaKardexNit()">
+
+            <header data-role="header" style="display:inline-block; height:40px; width:100%">
+                <a class="btnAtras" href="#" data-icon="back" data-rel="back"><span data-lang-id="lang16">Atras</span></a> 
+                <h1 data-lang-id=''>Top kardex por nit</h1>
+                <a href="javascript:irHome()" class="btnHome" data-transition="flip" data-icon="bars">Inicio</a>
+                <nav data-role="navbar">
+                    <ul>
+                        <li>
+                            <a data-role="tab" href="#top-kardexnit"><span data-lang-id="lang125">Tabular</span></a>
+                        </li>
+                        <li>
+                            <a data-role="tab" href="#tab-kardexnit-2" class="ui-btn-active" style="background: #5393c5" data-transition="none"><span data-lang-id="lang126">Gráfica</span>s</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <br />
+            <div id="content-kardexnit-2" data-role="content" style="border-top: 1px solid black; margin:0; padding:0; width:100%;">
+                <br />
+                <nav style="padding-top:10px; height: 27px;">
+                    <div id="histogramaKardexNit" onclick="graficarHistogramaKardexNit();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #5393c5; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang154'>Histograma</span></div>
+                    <div id="tortaKardexNit" onclick="graficarTortaKardexNit();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; border-right:1px solid black; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang155'>Histograma</span></div>
+                    <div id="puntosKardexNit" onclick="graficarLineaKardexNit();" style="font-family: Helvetica,Arial,sans-serif; width:33%; font-size: 0.8em; background: #2f2f2f; color: white; display:inline-block; float: left; margin:0; height: 25px; padding-top:1.2em; text-align:center; letter-spacing:0.09em; cursor:pointer;"><span data-lang-id='lang156'>Histograma</span></div>
+                </nav>
+                <br />
+                <div id="contenidoGraficaNit" style="position: absolute; top:60; left: 0; height:65%; width:100%; text-align: center; padding-top: 10px">
+                    <div id="barKardexNit" style="display:none;"></div>
+                    <div id="pieKardexNit" style="display:none;"></div>
+                    <div id="lineKardexN" style="display:none;"></div>
+                </div>
+            </div>
+        </section>
+        <!-- FIN PAGINA TOP KARDEXNIT 2-->
+
         <!-- INICIO JAVASCRIPT -->
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/core/datos/QueryDB.js"></script>
@@ -1584,6 +1793,7 @@
         <script type="text/javascript" src="js/core/gestion.js"></script>
         <script type="text/javascript" src="js/core/carrusel.js"></script>
         <script type="text/javascript" src="js/core/ventas.js"></script>
+        <script type="text/javascript" src="js/core/kardex.js"></script>
         <script type="text/javascript" src="js/core/ventas_general.js"></script> 
         <script type="text/javascript" src="js/core/transacciones.js"></script> 
         <script type="text/javascript" src="js/core/tabs.js"></script>
