@@ -8,6 +8,8 @@ function NetearDivsTopGeneral() {
     jQuery("#contenidoGraficaDescuentos").html('');
     jQuery("#contenidoGraficaTiposVentas").html('');
     jQuery("#contenidoGraficaAlmacenes").html('');
+    jQuery("#contenidoGraficaConcepto").html('');
+    jQuery("#contenidoGraficaNit").html('');
 }
 function toCurrency(cnt) {
     cnt = cnt.toString().replace(/\$|\,/g, '');
@@ -663,9 +665,9 @@ function tabVentas3()
 }
 function traerTop10Almacenes()
 {
-    var date_test = formatearFecha(new Date().toString());
+    var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_almacenes";
-    var sql = "select m.d_almacen||'('||m.c_almacen||')' almacen, sum(h.vr_subtotal) from m_puntos_venta m inner join h_ventas h on m.c_almacen=h.c_almacen  where h.f_factura = '" + date_test + "' group by 1 order by 1;";
+    var sql = "select m.d_almacen||'('||m.c_almacen||')' almacen, sum(h.vr_subtotal) from m_puntos_venta m inner join h_ventas h on m.c_almacen=h.c_almacen  where h.f_factura = '" + date + "' group by 1 order by 1;";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;
@@ -681,9 +683,9 @@ function traerTop10Almacenes()
 }
 function traerTop10TiposVentas()
 {
-    var date_test = formatearFecha(new Date().toString());
+    var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_tipos_ventas";
-    var sql = "elect first 10 m.d_tipo_venta || '(' || m.c_tipo_venta || ')' tipo_venta, sum(vr_subtotal) total from h_ventas h, m_tipos_venta m where h.c_tipo_venta = m.c_tipo_venta and h.f_factura = '" + date_test + "' group by 1 order by total desc";
+    var sql = "elect first 10 m.d_tipo_venta || '(' || m.c_tipo_venta || ')' tipo_venta, sum(vr_subtotal) total from h_ventas h, m_tipos_venta m where h.c_tipo_venta = m.c_tipo_venta and h.f_factura = '" + date + "' group by 1 order by total desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;
@@ -699,9 +701,9 @@ function traerTop10TiposVentas()
 }
 function traerTop10Descuentos()
 {
-    var date_test = formatearFecha(new Date().toString());
+    var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_descuentos";
-    var sql = "select first 10 vr_subtotal,vr_descuento, case when vr_subtotal = 0 then 0 else ((vr_descuento*100)/vr_subtotal) end as porcentaje from h_ventas where f_factura='" + date_test + "' order by 2 desc";
+    var sql = "select first 10 vr_subtotal,vr_descuento, case when vr_subtotal = 0 then 0 else ((vr_descuento*100)/vr_subtotal) end as porcentaje from h_ventas where f_factura='" + date + "' order by 2 desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;
@@ -720,7 +722,7 @@ function traerTop10Descuentos()
 }
 function traerTop10Productos()
 {
-    var date_test = formatearFecha(new Date().toString());
+    //var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_productos";
     var sql = "select first 10 p.d_producto||'('||p.c_barra||')' producto, sum(v.pr_venta*v.cn_venta) ventas from mv_ventas v,vw_productos p where v.c_barra=p.c_barra and p.c_barra <> '0' group by 1 order by 2 desc;";
     xmlQueryDB(sql, id_query, 1, false, ruta);
@@ -738,9 +740,9 @@ function traerTop10Productos()
 }
 function traerTop10Clientes()
 {
-    var date_test = formatearFecha(new Date().toString());
+    var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_clientes";
-    var sql = "select first 10 c.nombres ||' '|| c.apellidos ||'('||round(cc_cliente,0)||')' cliente,sum(vr_subtotal) valor_venta from h_ventas a, m_clientes c where a.cc_cliente=c.cedula and f_factura='" + date_test + "' group by 1 order by valor_venta desc";
+    var sql = "select first 10 c.nombres ||' '|| c.apellidos ||'('||round(cc_cliente,0)||')' cliente,sum(vr_subtotal) valor_venta from h_ventas a, m_clientes c where a.cc_cliente=c.cedula and f_factura='" + date + "' group by 1 order by valor_venta desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;
@@ -757,9 +759,9 @@ function traerTop10Clientes()
 pts = {};
 function traerTop10Vendedores()
 {
-    var date_test = formatearFecha(new Date().toString());
+    var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_vendedores";
-    var sql = "select d_vendedor || '(' || hv.c_vendedor || ')' vendedor, sum(vr_subtotal) valor_venta from h_ventas hv, m_vendors v where hv.c_vendedor = v.c_vendedor and f_factura='" + date_test + "' group by 1 order by valor_venta desc";
+    var sql = "select d_vendedor || '(' || hv.c_vendedor || ')' vendedor, sum(vr_subtotal) valor_venta from h_ventas hv, m_vendors v where hv.c_vendedor = v.c_vendedor and f_factura='" + date + "' group by 1 order by valor_venta desc";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;

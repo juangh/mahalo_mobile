@@ -1,10 +1,12 @@
 jQuery(document).on("ready", init);
 function init()
 {   
+    $("#version").html( "&nbsp;" + version);
+    $("#version").css("font-weight","bold");
     $(document).css('border','1px solid green');
     if (localStorage["idioma"] === "en") {
         $.each($("select option"), function() {
-            $("[data-lang-id=lang121]").text("All");
+            $("[data-lang-id=lang121]").text("All"); 
         });
     }
     var fecha = getCurrentDate(new Date().toString()); 

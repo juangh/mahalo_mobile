@@ -1,4 +1,5 @@
 var instancia_db = '@bd01_tcp';
+var version = '1.2.0';
 var pagina = -3;
 var btnAtras = true;
 var btnInicio = true;
@@ -47,6 +48,9 @@ var inicioLineaAlmacenes = true;
 var inicioHistogramaKardexConcepto = true;
 var inicioTortaKardexConcepto = true;
 var inicioLineaKardexConcepto = true;
+var inicioHistogramaKardexNit = true;
+var inicioTortaKardexNit = true;
+var inicioLineaKardexNit = true;
 var roles = new Object();
 var ruta = 'http://mahalo.saas.com.co/pos/';
 var rutaPortal = 'http://mahalo.saas.com.co/portalmahalo_dllo/formularios/movimientos/mobile/movimientosDeVentasMobile.php';
@@ -245,8 +249,8 @@ jQuery("#login").on('pageinit', function() {
 });
 jQuery("#flip-max").on('change', function() { estado = $("#flip-max").val(); });
 var transiciones = new Array("flip", "flip", "flip", "flip", "flip", "flip", "flip", "flip", "flip");
-var anclas = new Array("#pagina-ventas", "#pagina-inventario", "#pagina-test", "#tops-menus", "#tops-menus-kardex", "#pagina-config", "#", "#", "#opciones-ventas");
+var anclas = new Array("#pagina-ventas", "#pagina-inventario", "#pagina-test", "#tops-menus", "#tops-menus-kardex", "http://mahalo.saas.com.co/portalmahalo", "#", "#", "#opciones-ventas");
 var imagenes = new Array("img/home/ventas.png", "img/home/inventario.png", "img/home/lenguajes.png", "img/home/database.png", "img/home/top.png", "img/home/portal.png", "img/home/configuraciones.png", "img/home/ventas.png", "img/home/ventas.png");
-var secciones = new Array("Ventas", "Inventario", "Lenguajes", "Top Ventas", "Top Kardex", "Gestión", "Configuración", "Etiqueta4", "Etiqueta5");
+var secciones = new Array("Ventas", "Inventario", "Lenguajes", "Top Ventas", "Top Kardex", "Portal web", "Configuración", "Etiqueta4", "Etiqueta5");
 var camposVentasGeneral = new Array("linea", "categoria", "subcategoria", "segmento", "sector", "almacen", "clasificacion", "referencia", "desc_referencia", "barra", "plu", "talla", "color", "coleccion", "proveedor", "presentacion", "ubicacion", "grupo_almacen", "ciudad", "marca", "fecha_creacion", "vendedor", "cliente", "tipo_venta", "caja", "num_factura", "fecha_factura", "margen_utilidad", "fecha_sistema", "hora_factura", "escala", "usuario", "ref_proveedor", "valor_unitario", "costo_unitario", "tipo_documento", "doc_anulado", "tar_impuesto", "doc_referencia");
 $("#frmChoiceFilters").trigger('create');$("#frm_ventas_general").trigger('create');

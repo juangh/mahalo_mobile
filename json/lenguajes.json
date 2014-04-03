@@ -10,7 +10,7 @@
         "lang7": "Lenguajes",
         "lang8": "Top ventas",
         "lang9": "Top kardex",
-        "lang10": "Gestión",
+        "lang10": "Portal web",
         "lang11": "Etiqueta",
         "lang12": "Etiqueta",
         "lang13": "Etiqueta",
@@ -156,7 +156,8 @@
         "lang153": "Almacenes",
         "lang154": "Histograma",
         "lang155": "Torta",
-        "lang156": "Puntos"
+        "lang156": "Puntos",
+        "lang157": "Versión"
     },
     "en": {
         "lang0": "Username",
@@ -169,7 +170,7 @@
         "lang7": "Language",
         "lang8": "Top sales",
         "lang9": "Top kardex",
-        "lang10": "Management",
+        "lang10": "Web Portal",
         "lang11": "Label",
         "lang12": "Label",
         "lang13": "Label",
@@ -315,6 +316,7 @@
         "lang153": "Stores",
         "lang154": "Histogram",
         "lang155": "Pie",
-        "lang156": "Points"
+        "lang156": "Points",
+        "lang157": "Version"
     }
 }

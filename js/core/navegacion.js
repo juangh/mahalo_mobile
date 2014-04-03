@@ -349,7 +349,7 @@ function contarCargaPaginas()
             }
         }
     }
-    if ((curpath === "top-ventasxclientes") || (curpath === "top-ventasxvend") || (curpath === "top-ventasxprod") || (curpath === "top-ventasxdesc") || (curpath === "#top-ventasxtipoventas") || (curpath === "top-ventasxalmacenes")) {
+    if ((curpath === "top-ventasxclientes") || (curpath === "top-ventasxvend") || (curpath === "top-ventasxprod") || (curpath === "top-ventasxdesc") || (curpath === "#top-ventasxtipoventas") || (curpath === "top-ventasxalmacenes") || (curpath === "top-kardexconcepto") || (curpath === "top-kardexnit")) {
         pagina = 2;
     } 
     pagina_anterior = curpath;

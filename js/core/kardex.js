@@ -15,13 +15,13 @@ function graficarHistogramaKardexConcepto()
                 barras = barras + "," + puntos[i]['y'];
             }
             if (barras === '') {
-                $("#contenidoGraficaKardex").html("<div style='background: white; margin-left: 25px; margin-right:25px; border:1px solid #CCC; color:red;'><h4 style='text-align:center; color:red;'>No hay datos para realizar la graficación...</h4></div>");
+                $("#contenidoGraficaConcepto").html("<div style='background: white; margin-left: 25px; margin-right:25px; border:1px solid #CCC; color:red;'><h4 style='text-align:center; color:red;'>No hay datos para realizar la graficación...</h4></div>");
             } else {
-                jQuery("#contenidoGraficaKardex").html('');
-                jQuery("#contenidoGraficaKardex").html('<div id="barKardex" style="display:none;"></div><div id="pieKardex" style="display:none;"></div><div id="lineKardex" style="display:none;"></div>');
+                jQuery("#contenidoGraficaConcepto").html('');
+                jQuery("#contenidoGraficaConcepto").html('<div id="barKardex" style="display:none;"></div><div id="pieKardex" style="display:none;"></div><div id="lineKardex" style="display:none;"></div>');
                 jQuery("#barKardex").text(barras.substr(1));
                 jQuery("#barKardex").peity("bar");
-                jQuery("#contenidoGraficaKardex").append($("canvas.peity"));
+                jQuery("#contenidoGraficaConcepto").append($("canvas.peity"));
                 for (var i = 0; i < $("canvas.peity").length; i++) {
                     if ($("canvas.peity")[i].id === GRAFICA) {
                         posicion = i;
@@ -102,7 +102,7 @@ function graficarLineaKardexConcepto()
     }
 }
 
-function traerTop10KardexConcepto()
+function traerTop10KardexConceptos()
 {
     var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_kardex_concepto";
@@ -123,7 +123,7 @@ function traerTop10KardexConcepto()
 var jdg;
 function llenarTablaKardexConcepto()
 {
-    var datos = traerTop10KardexConcepto();
+    var datos = traerTop10KardexConceptos();
     var size = datos.size + 1;
     var filas = [];
     if (size > -1) {
@@ -158,6 +158,7 @@ function graficarHistogramaKardexNit()
     jQuery("#puntosKardexNit").css("background", "#2f2f2f");
     jQuery.fn.peity.defaults.bar = {colours: ["#4d89f9"], delimiter: ",", height: "100%", max: null, min: 0, spacing: 1, width: "100%"};
     var puntos = traerTop10KardexNit();
+    jdg = puntos;
     if (puntos.size !== -1) {
         if (puntos) {
             var barras = "";
@@ -177,9 +178,9 @@ function graficarHistogramaKardexNit()
                         posicion = i;
                     }
                 }
-                if (inicioHistogramaKardexConceptoNit) {
+                if (inicioHistogramaKardexNit) {
                     $current = $("canvas.peity:nth-last-child(" + posicion + ")");
-                    inicioHistogramaKardexConceptoNit = false;
+                    inicioHistogramaKardexNit = false;
                 }
             }
         }
@@ -213,7 +214,7 @@ function graficarTortaKardexNit()
             }
             if (inicioTortaKardexNit) {
                 $current = $("canvas.peity:nth-last-child(" + posicion + ")");
-                inicioTortaKardexConcepto = false;
+                inicioTortaKardexNit = false;
             }
         }
     }
@@ -227,7 +228,7 @@ function graficarLineaKardexNit()
     jQuery("#tortaKardexNit").css("background", "#2f2f2f");
     jQuery("#puntosKardexNit").css("background", "#78bde7");
     jQuery.fn.peity.defaults.line = {colour: "#c6d9fd", strokeColour: "#4d89f9", strokeWidth: 1, delimiter: ",", height: "100%", max: null, min: 0, width: "100%"};
-    var puntos = traerTop10KardexConceptos();
+    var puntos = traerTop10KardexNit();
     if (puntos.size !== -1) {
         if (puntos) {
             var barras = "";
@@ -244,9 +245,9 @@ function graficarLineaKardexNit()
                     posicion = i;
                 }
             }
-            if (inicioLineaKardexConceptoNit) {
+            if (inicioLineaKardexNit) {
                 $current = $("canvas.peity:nth-last-child(" + posicion + ")");
-                inicioKardexConceptoNit = false;
+                inicioKardexNit = false;
             }
         }
     }
@@ -254,9 +255,9 @@ function graficarLineaKardexNit()
 
 function traerTop10KardexNit()
 {
-    var date = formatearFecha(new Date().toString());
+    //var date = formatearFecha(new Date().toString());
     var id_query = "busqueda_top_kardex_nit";
-    var sql = "select first 10nit, sum(vr_factura) as v_facturas from h_kardex group by 1 order by 2 desc;";
+    var sql = "select first 10 nit, sum(vr_factura) as v_facturas from h_kardex group by 1 order by 2 desc;";
     xmlQueryDB(sql, id_query, 1, false, ruta);
     var ar_status = getStatusDB(id_query);
     var size = ar_status['numrows'] - 1;
