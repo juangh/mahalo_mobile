@@ -51,11 +51,11 @@ function graficarTortaKardexConcepto()
             for (var i = 0; i < puntos.size + 1; i++) {
                 barras = barras + "," + puntos[i]['y'];
             }
-            jQuery("#contenidoGraficaKardex").html('');
-            jQuery("#contenidoGraficaKardex").html('<div id="barKardex" style="display:none;"></div><div id="pieKardex" style="display:none;"></div><div id="lineKardex" style="display:none;"></div>');
+            jQuery("#contenidoGraficaConcepto").html('');
+            jQuery("#contenidoGraficaConcepto").html('<div id="barKardex" style="display:none;"></div><div id="pieKardex" style="display:none;"></div><div id="lineKardex" style="display:none;"></div>');
             jQuery("#pieKardex").text(barras.substr(1));
             jQuery("#pieKardex").peity("pie");
-            jQuery("#contenidoGraficaKardex").append($("canvas.peity"));
+            jQuery("#contenidoGraficaConcepto").append($("canvas.peity"));
             for (var i = 0; i < $("canvas.peity").length; i++) {
                 if ($("canvas.peity")[i].id === GRAFICA) {
                     posicion = i;
@@ -84,11 +84,11 @@ function graficarLineaKardexConcepto()
             for (var i = 0; i < puntos.size + 1; i++) {
                 barras = barras + "," + puntos[i]['y'];
             }
-            jQuery("#contenidoGraficaKardex").html('');
-            jQuery("#contenidoGraficaKardex").html('<div id="barKardex" style="display:none;"></div><div id="pieKardex" style="display:none;"></div><div id="lineKardex" style="display:none;"></div>');
+            jQuery("#contenidoGraficaConcepto").html('');
+            jQuery("#contenidoGraficaConcepto").html('<div id="barKardex" style="display:none;"></div><div id="pieKardex" style="display:none;"></div><div id="lineKardex" style="display:none;"></div>');
             jQuery("#lineKardex").text(barras.substr(1));
             jQuery("#lineKardex").peity("line");
-            jQuery("#contenidoGraficaKardex").append(jQuery("canvas.peity"));
+            jQuery("#contenidoGraficaConcepto").append(jQuery("canvas.peity"));
             for (var i = 0; i < $("canvas.peity").length; i++) {
                 if ($("canvas.peity")[i].id === GRAFICA) {
                     posicion = i;
@@ -166,13 +166,13 @@ function graficarHistogramaKardexNit()
                 barras = barras + "," + puntos[i]['y'];
             }
             if (barras === '') {
-                $("#contenidoGraficaKardexNit").html("<div style='background: white; margin-left: 25px; margin-right:25px; border:1px solid #CCC; color:red;'><h4 style='text-align:center; color:red;'>No hay datos para realizar la graficación...</h4></div>");
+                $("#contenidoGraficaNit").html("<div style='background: white; margin-left: 25px; margin-right:25px; border:1px solid #CCC; color:red;'><h4 style='text-align:center; color:red;'>No hay datos para realizar la graficación...</h4></div>");
             } else {
-                jQuery("#contenidoGraficaKardexNit").html('');
-                jQuery("#contenidoGraficaKardexNit").html('<div id="barKardexNit" style="display:none;"></div><div id="pieKardexNit" style="display:none;"></div><div id="lineKardexNit" style="display:none;"></div>');
+                jQuery("#contenidoGraficaNit").html('');
+                jQuery("#contenidoGraficaNit").html('<div id="barKardexNit" style="display:none;"></div><div id="pieKardexNit" style="display:none;"></div><div id="lineKardexNit" style="display:none;"></div>');
                 jQuery("#barKardexNit").text(barras.substr(1));
                 jQuery("#barKardexNit").peity("bar");
-                jQuery("#contenidoGraficaKardexNit").append($("canvas.peity"));
+                jQuery("#contenidoGraficaNit").append($("canvas.peity"));
                 for (var i = 0; i < $("canvas.peity").length; i++) {
                     if ($("canvas.peity")[i].id === GRAFICA) {
                         posicion = i;
@@ -202,11 +202,11 @@ function graficarTortaKardexNit()
             for (var i = 0; i < puntos.size + 1; i++) {
                 barras = barras + "," + puntos[i]['y'];
             }
-            jQuery("#contenidoGraficaKardexNit").html('');
-            jQuery("#contenidoGraficaKardexNit").html('<div id="barKardexNit" style="display:none;"></div><div id="pieKardexNit" style="display:none;"></div><div id="lineKardexNit" style="display:none;"></div>');
+            jQuery("#contenidoGraficaNit").html('');
+            jQuery("#contenidoGraficaNit").html('<div id="barKardexNit" style="display:none;"></div><div id="pieKardexNit" style="display:none;"></div><div id="lineKardexNit" style="display:none;"></div>');
             jQuery("#pieKardexNit").text(barras.substr(1));
             jQuery("#pieKardexNit").peity("pie");
-            jQuery("#contenidoGraficaKardexNit").append($("canvas.peity"));
+            jQuery("#contenidoGraficaNit").append($("canvas.peity"));
             for (var i = 0; i < $("canvas.peity").length; i++) {
                 if ($("canvas.peity")[i].id === GRAFICA) {
                     posicion = i;
@@ -235,11 +235,11 @@ function graficarLineaKardexNit()
             for (var i = 0; i < puntos.size + 1; i++) {
                 barras = barras + "," + puntos[i]['y'];
             }
-            jQuery("#contenidoGraficaKardexNit").html('');
-            jQuery("#contenidoGraficaKardexNit").html('<div id="barKardexNit" style="display:none;"></div><div id="pieKardexNit" style="display:none;"></div><div id="lineKardexNit" style="display:none;"></div>');
+            jQuery("#contenidoGraficaNit").html('');
+            jQuery("#contenidoGraficaNit").html('<div id="barKardexNit" style="display:none;"></div><div id="pieKardexNit" style="display:none;"></div><div id="lineKardexNit" style="display:none;"></div>');
             jQuery("#lineKardexNit").text(barras.substr(1));
             jQuery("#lineKardexNit").peity("line");
-            jQuery("#contenidoGraficaKardexNit").append(jQuery("canvas.peity"));
+            jQuery("#contenidoGraficaNit").append(jQuery("canvas.peity"));
             for (var i = 0; i < $("canvas.peity").length; i++) {
                 if ($("canvas.peity")[i].id === GRAFICA) {
                     posicion = i;
